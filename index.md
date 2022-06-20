@@ -1,29 +1,76 @@
-## Welcome to GitHub Pages
+## Présentation de l'application Star Wars Story
+Une skill Alexa faisant appel à l'API de swapi.dev
 
-You can use the [editor on GitHub](https://github.com/pierre370/StarWars_Story/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+Pour commencer, j'ai décider de créer une skill sur star wars donnant un accès au résumer
+et aux informations importantes sur chaque épisodes.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Code Source
+
+Le code présenté en Node.JS est issue de l'IDE présent sur l'outil de développement Amazon.
 
 ```markdown
-Syntax highlighted code block
+const Alexa = require('ask-sdk-core');
+const https = require('https');
 
-# Header 1
-## Header 2
-### Header 3
+const httpGet = () => {
+  return new Promise(((resolve, reject) => {
+    var options = {
+        host: 'swapi.dev',
+        port: 443,
+        path: '/api/films/1/',
+        method: 'GET',
+    };
 
-- Bulleted
-- List
+    const request = https.request(options, (response) => {
+      response.setEncoding('utf8');
+      let returnData = '';
 
-1. Numbered
-2. List
+      response.on('data', (chunk) => {
+        returnData += chunk;
+      });
 
-**Bold** and _Italic_ and `Code` text
+      response.on('end', () => {
+        resolve(JSON.parse(returnData));
+      });
 
-[Link](url) and ![Image](src)
+      response.on('error', (error) => {
+        reject(error);
+      });
+    });
+    request.end();
+  }));
+}
+
+const LaunchRequestHandler = {
+    canHandle(handlerInput) {
+        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'LaunchRequest';
+    },
+    handle(handlerInput) {
+        const speakOutput = 'Bonjour jeune padawan, que puis-je faire pour toi ?';
+
+        return handlerInput.responseBuilder
+            .speak(speakOutput)
+            .reprompt(speakOutput)
+            .getResponse();
+    }
+};
+const GetFactIntentHandler = {
+    canHandle(handlerInput) {
+        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
+            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'GetFactIntent';
+    },
+    async handle(handlerInput) {
+        // const speakOutput = 'I will tell a fact!';
+        const response = await httpGet();
+        const speakOutput = "Le titre " + response.title + " a été réaliser par " + response.director + response.opening_crawl;
+        return handlerInput.responseBuilder
+            .speak(speakOutput)
+            //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
+            .getResponse();
+    }
+};
 ```
 
 For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
