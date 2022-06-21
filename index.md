@@ -105,7 +105,7 @@ Dans un deuxième temps, je lance la requête de "bienvenue" -> "Bonjour jeune p
 Puis je construit ma réponse avec les données récupérer ! 
 
 Vidéo de démonstration : 
-[![Alt text for your video](http://img.youtube.com/vi/T-D1KVIuvjA/0.jpg)]([http://www.youtube.com/watch?v=T-D1KVIuvjA](https://www.canva.com/design/DAFEMHhA_EU/bbbTyZOmM8b4pNp4XLl_eA/watch))
+https://www.canva.com/design/DAFEMHhA_EU/bbbTyZOmM8b4pNp4XLl_eA/watch
 
 
 
