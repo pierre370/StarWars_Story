@@ -1,8 +1,10 @@
 ## Présentation de l'application Star Wars Story
+![alt text]([http://url/to/img.png](https://fr.m.wikipedia.org/wiki/Fichier:Star_Wars_Logo.svg))
+
 Une skill Alexa faisant appel à l'API de swapi.dev
 
-Pour commencer, j'ai décider de créer une skill sur star wars donnant un accès au résumer
-et aux informations importantes sur chaque épisodes.
+Pour commencer, j'ai décidé de créer une skill sur star wars donnant un accès au résumer
+et aux informations importantes sur chaque épisode.
 
 
 
