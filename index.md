@@ -1,5 +1,4 @@
 ## Présentation de l'application Star Wars Story
-![alt tag](https://fr.m.wikipedia.org/wiki/Fichier:Star_Wars_Logo.svg)
 
 Une skill Alexa faisant appel à l'API de swapi.dev
 
@@ -92,7 +91,7 @@ exports.handler = Alexa.SkillBuilders.custom()
     .lambda();
 ```
 
-Je fais dans un premier temps un appele à l'API en indiquant :
+Je fais dans un premier temps un appelle à l'API en indiquant :
 
     - l'adresse "host" : correspond à l'adresse de l'API
     
