@@ -73,12 +73,36 @@ const GetFactIntentHandler = {
 };
 ```
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+```markdown
+exports.handler = Alexa.SkillBuilders.custom()
+    .addRequestHandlers(
+        LaunchRequestHandler,
+        HelloWorldIntentHandler,
+        GetFactIntentHandler,
+        HelpIntentHandler,
+        CancelAndStopIntentHandler,
+        FallbackIntentHandler,
+        SessionEndedRequestHandler,
+        IntentReflectorHandler)
+    .addErrorHandlers(
+        ErrorHandler)
+    .withCustomUserAgent('sample/hello-world/v1.2')
+    .lambda();
+```
 
-### Jekyll Themes
+Je fais dans un premier temps un appele à l'API en indiquant :
+    - l'adresse "host" : correspond à l'adresse de l'API
+    - port :  ici 443 pour utiliser le protocol TCP
+    - path : indique le chemin d'accès aux données JSON de l'API
+    - GET : permet de récupérer les données du serveur depuis le navigateur
+    
+Dans un deuxième temps, je lance la requête de "bienvenue" -> "Bonjour jeune padawan, que puis-je faire pour toi ?"
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/pierre370/StarWars_Story/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+Puis je construit ma réponse avec les données récupérer ! 
 
-### Support or Contact
+Vidéo de démonstration : 
+[![Alt text for your video](http://img.youtube.com/vi/T-D1KVIuvjA/0.jpg)](http://www.youtube.com/watch?v=T-D1KVIuvjA)
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+Source: https://prograide.com/pregunta/15530/comment-integrer-une-video-dans-le-fichier-readmemd-de-github
+
+
