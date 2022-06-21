@@ -91,9 +91,13 @@ exports.handler = Alexa.SkillBuilders.custom()
 ```
 
 Je fais dans un premier temps un appele à l'API en indiquant :
+
     - l'adresse "host" : correspond à l'adresse de l'API
+    
     - port :  ici 443 pour utiliser le protocol TCP
+    
     - path : indique le chemin d'accès aux données JSON de l'API
+    
     - GET : permet de récupérer les données du serveur depuis le navigateur
     
 Dans un deuxième temps, je lance la requête de "bienvenue" -> "Bonjour jeune padawan, que puis-je faire pour toi ?"
@@ -101,8 +105,7 @@ Dans un deuxième temps, je lance la requête de "bienvenue" -> "Bonjour jeune p
 Puis je construit ma réponse avec les données récupérer ! 
 
 Vidéo de démonstration : 
-[![Alt text for your video](http://img.youtube.com/vi/T-D1KVIuvjA/0.jpg)](http://www.youtube.com/watch?v=T-D1KVIuvjA)
+[![Alt text for your video](http://img.youtube.com/vi/T-D1KVIuvjA/0.jpg)]([http://www.youtube.com/watch?v=T-D1KVIuvjA](https://www.canva.com/design/DAFEMHhA_EU/bbbTyZOmM8b4pNp4XLl_eA/watch))
 
-Source: https://prograide.com/pregunta/15530/comment-integrer-une-video-dans-le-fichier-readmemd-de-github
 
 
