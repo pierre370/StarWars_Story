@@ -1,5 +1,5 @@
 ## Présentation de l'application Star Wars Story
-![alt text]([http://url/to/img.png](https://fr.m.wikipedia.org/wiki/Fichier:Star_Wars_Logo.svg))
+![alt text](https://fr.m.wikipedia.org/wiki/Fichier:Star_Wars_Logo.svg)
 
 Une skill Alexa faisant appel à l'API de swapi.dev
 
